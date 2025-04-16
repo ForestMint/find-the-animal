@@ -7,8 +7,8 @@ fn request_shoot() -> String {
 fn main () {
     let my_game = game::Game::new();
 
-    while !my_game.is_over() {
+    while !&my_game.is_over() {
         let shoot_candidate = request_shoot();
-        my_game.shoot_animal(shoot_candidate);
+        game::Game::shoot_animal(&my_game, shoot_candidate);
     }
 }

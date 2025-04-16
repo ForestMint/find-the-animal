@@ -5,7 +5,7 @@ use crate::game::pool_of_animals::animal::Diet::*;
 mod animal;
 
 pub struct PoolOfAnimals {
-    vector_of_animals : Vec<animal::Animal>,
+    pub vector_of_animals : Vec<animal::Animal>,
 }
 
 impl PoolOfAnimals {
@@ -127,6 +127,6 @@ impl PoolOfAnimals {
         let my_vector_of_animals = vec![lion, tiger];
 
         PoolOfAnimals { vector_of_animals: my_vector_of_animals }
-        
+
     }
 }

@@ -12,14 +12,14 @@ impl Game {
 
     pub fn new() -> Game {
 
-        let my_pool_of_animals = pool_of_animals::PoolOfAnimals::fill();
+        let my_deck_of_animals = pool_of_animals::PoolOfAnimals::fill();
         let my_board_of_animals = pool_of_animals::PoolOfAnimals::fill();
 
         let my_hand_of_animals = pool_of_animals::PoolOfAnimals::fill();
 
 
         Game {
-            deck: my_pool_of_animals, 
+            deck: my_deck_of_animals, 
             board: my_board_of_animals,
             hand: my_hand_of_animals,
             name_of_secret_animal: "walrus".to_string(),

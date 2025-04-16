@@ -98,5 +98,11 @@ fn main () {
         diet: Herbivore,
     };
 
+    let komodo_dragon = animal::Animal {
+        name: "komodo_dragon".to_string(),
+        class: Reptile,
+        area: Asia,
+        diet: Carnivore,
+    };
 
 }

@@ -112,4 +112,18 @@ fn main () {
         diet: Carnivore,
     };
 
+    let penguin = animal::Animal {
+        name: "penguin".to_string(),
+        class: Bird,
+        area: vec![Antarctica],
+        diet: Carnivore,
+    };
+
+    let walrus = animal::Animal {
+        name: "walrus".to_string(),
+        class: Mammal,
+        area: vec![Antarctica],
+        diet: Carnivore,
+    };
+
 }

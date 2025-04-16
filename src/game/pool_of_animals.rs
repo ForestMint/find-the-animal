@@ -183,7 +183,26 @@ impl PoolOfAnimals {
             can_fly: false,
         };
 
-        let my_vector_of_animals = vec![lion, tiger];
+        let greater_flamingo = animal::Animal {
+            name: "greater_flamingo".to_string(),
+            class: Bird,
+            area: vec![Africa, Asia, Europe],
+            diet: Carnivore,
+            has_wings: true,
+            can_fly: true,
+        };
+
+
+        let toucan = animal::Animal {
+            name: "toucan".to_string(),
+            class: Bird,
+            area: vec![Americas],
+            diet: Herbivore,
+            has_wings: true,
+            can_fly: true,
+        };
+
+        let my_vector_of_animals = vec![lion, tiger, cobra, chameleon, elephant, zebra, hippopotamus, rhinoceros, lama, colibri, panda, koala, komodo_dragon, seagull, penguin, walrus, iguana, crocodile, ostrich, greater_flamingo, toucan];
 
         PoolOfAnimals { vector_of_animals: my_vector_of_animals }
 

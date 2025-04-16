@@ -84,5 +84,19 @@ fn main () {
         diet: Omnivore,
     };
 
+    let panda = animal::Animal {
+        name: "panda".to_string(),
+        class: Mammal,
+        area: Asia,
+        diet: Herbivore,
+    };
+
+    let koala = animal::Animal {
+        name: "koala".to_string(),
+        class: Mammal,
+        area: Oceania,
+        diet: Herbivore,
+    };
+
 
 }

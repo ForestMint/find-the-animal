@@ -11,5 +11,5 @@ $ cargo build
 To start a game, launch the following command
 
 ```sh
-$ ./tagret/debug/main
+$ ./target/debug/main
 ```

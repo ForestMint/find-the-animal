@@ -8,20 +8,9 @@ fn main () {
 
     while !&my_game.is_over() {
 
-        let mut line = String::new();
-        println!("Enter your name :");
-        let b1 = std::io::stdin().read_line(&mut line).unwrap();
-        println!("Hello , {}", line);
-        println!("no of bytes read , {}", b1);
-
-
-
-
-
-        let shoot_candidate = "walrus".to_string();
-
-
-
+        let mut shoot_candidate = String::new();
+        println!("Animal to eliminate : ");
+        let b1 = std::io::stdin().read_line(&mut shoot_candidate).unwrap();
 
 
         game::Game::shoot_animal(&my_game, shoot_candidate);

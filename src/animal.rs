@@ -22,7 +22,7 @@ pub enum Diet {
 pub struct Animal {
     pub name: String,
     pub class: Class,
-    pub area: Continent,
+    pub area: Vec<Continent>,
     pub diet : Diet,
 }
 

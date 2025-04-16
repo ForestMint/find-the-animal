@@ -105,4 +105,11 @@ fn main () {
         diet: Carnivore,
     };
 
+    let seagull = animal::Animal {
+        name: "seagull".to_string(),
+        class: Bird,
+        area: vec![Africa, Asia, Americas, Europe, Oceania],
+        diet: Carnivore,
+    };
+
 }

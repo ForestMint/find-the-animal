@@ -2,13 +2,29 @@ mod pool_of_animals;
 
 pub struct Game {
     pool_of_animals: pool_of_animals::PoolOfAnimals,
+    board: pool_of_animals::PoolOfAnimals,
+    hand: pool_of_animals::PoolOfAnimals,
+    name_of_secret_animal: String,
     is_over: bool,
 }
 
 impl Game {
 
     pub fn new() -> Game {
-        Game {pool_of_animals: pool_of_animals::PoolOfAnimals::fill(), is_over: false}
+
+        let my_pool_of_animals = pool_of_animals::PoolOfAnimals::fill();
+        let my_board_of_animals = pool_of_animals::PoolOfAnimals::fill();
+
+        let my_hand_of_animals = pool_of_animals::PoolOfAnimals::fill();
+
+
+        Game {
+            pool_of_animals: my_pool_of_animals, 
+            board: my_board_of_animals,
+            hand: my_hand_of_animals,
+            name_of_secret_animal: "walrus".to_string(),
+            is_over: false
+        }
     }
 
     pub fn is_over(&self) -> bool {

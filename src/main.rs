@@ -21,5 +21,68 @@ fn main () {
         diet: Carnivore,
     };
 
+    let tiger = animal::Animal {
+        name: "tiger".to_string(),
+        class: Mammal,
+        area: Asia,
+        diet: Carnivore,
+    };
+
+    let cobra = animal::Animal {
+        name: "cobra".to_string(),
+        class: Reptile,
+        area: Asia,
+        diet: Carnivore,
+    };
+
+    let chameleon = animal::Animal {
+        name: "chameleon".to_string(),
+        class: Reptile,
+        area: Americas,
+        diet: Carnivore,
+    };
+
+    let elephant = animal::Animal {
+        name: "elephant".to_string(),
+        class: Mammal,
+        area: Africa,
+        diet: Herbivore,
+    };
+
+    let zebra = animal::Animal {
+        name: "zebra".to_string(),
+        class: Mammal,
+        area: Africa,
+        diet: Herbivore,
+    };
+
+    let hippopotamus = animal::Animal {
+        name: "hippopotamus".to_string(),
+        class: Mammal,
+        area: Africa,
+        diet: Herbivore,
+    };
+
+    let rhinoceros = animal::Animal {
+        name: "rhinoceros".to_string(),
+        class: Mammal,
+        area: Africa,
+        diet: Herbivore,
+    };
+
+    let lama = animal::Animal {
+        name: "lama".to_string(),
+        class: Mammal,
+        area: Americas,
+        diet: Herbivore,
+    };
+
+    let colibri = animal::Animal {
+        name: "colibri".to_string(),
+        class: Bird,
+        area: Americas,
+        diet: Omnivore,
+    };
+
 
 }

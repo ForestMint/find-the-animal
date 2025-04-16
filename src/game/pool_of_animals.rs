@@ -156,6 +156,15 @@ impl PoolOfAnimals {
             can_fly: false,
         };
 
+        let iguana = animal::Animal {
+            name: "iguana".to_string(),
+            class: Reptile,
+            area: vec![Americas],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+
         let my_vector_of_animals = vec![lion, tiger];
 
         PoolOfAnimals { vector_of_animals: my_vector_of_animals }

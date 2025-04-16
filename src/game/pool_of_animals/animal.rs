@@ -24,4 +24,6 @@ pub struct Animal {
     pub class: Class,
     pub area: Vec<Continent>,
     pub diet : Diet,
+    pub has_wings: bool,
+    pub can_fly: bool,
 }

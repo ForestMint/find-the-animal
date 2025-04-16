@@ -17,6 +17,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Africa],
             diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let tiger = animal::Animal {
@@ -24,6 +26,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Asia],
             diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let cobra = animal::Animal {
@@ -31,6 +35,8 @@ impl PoolOfAnimals {
             class: Reptile,
             area: vec![Asia],
             diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let chameleon = animal::Animal {
@@ -38,6 +44,8 @@ impl PoolOfAnimals {
             class: Reptile,
             area: vec![Americas],
             diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let elephant = animal::Animal {
@@ -45,6 +53,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Africa, Asia],
             diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let zebra = animal::Animal {
@@ -52,6 +62,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Africa],
             diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let hippopotamus = animal::Animal {
@@ -59,6 +71,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Africa],
             diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let rhinoceros = animal::Animal {
@@ -66,6 +80,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Africa],
             diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let lama = animal::Animal {
@@ -73,6 +89,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Americas],
             diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let colibri = animal::Animal {
@@ -80,6 +98,8 @@ impl PoolOfAnimals {
             class: Bird,
             area: vec![Americas],
             diet: Omnivore,
+            has_wings: true,
+            can_fly: true,
         };
     
         let panda = animal::Animal {
@@ -87,6 +107,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Asia],
             diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let koala = animal::Animal {
@@ -94,6 +116,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Oceania],
             diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let komodo_dragon = animal::Animal {
@@ -101,6 +125,8 @@ impl PoolOfAnimals {
             class: Reptile,
             area: vec![Asia],
             diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
         };
     
         let seagull = animal::Animal {
@@ -108,6 +134,8 @@ impl PoolOfAnimals {
             class: Bird,
             area: vec![Africa, Asia, Americas, Europe, Oceania],
             diet: Carnivore,
+            has_wings: true,
+            can_fly: true,
         };
     
         let penguin = animal::Animal {
@@ -115,6 +143,8 @@ impl PoolOfAnimals {
             class: Bird,
             area: vec![Antarctica],
             diet: Carnivore,
+            has_wings: true,
+            can_fly: false,
         };
     
         let walrus = animal::Animal {
@@ -122,6 +152,8 @@ impl PoolOfAnimals {
             class: Mammal,
             area: vec![Antarctica],
             diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
         };
 
         let my_vector_of_animals = vec![lion, tiger];

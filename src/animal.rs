@@ -1,10 +1,11 @@
-enum Class {
+
+pub enum Class {
     Mammal,
     Bird,
     Reptile
 }
 
-enum Continent {
+pub enum Continent {
     Africa,
     Americas,
     Asia,
@@ -12,16 +13,16 @@ enum Continent {
     Oceania
 }
 
-enum Diet {
+pub enum Diet {
     Carnivore,
     Herbivore,
     Omnivore
 }
 
 pub struct Animal {
-    name: String,
-    class: Class,
-    area: Continent,
-    diet : Diet,
+    pub name: String,
+    pub class: Class,
+    pub area: Continent,
+    pub diet : Diet,
 }
 

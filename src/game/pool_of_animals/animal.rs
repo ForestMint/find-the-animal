@@ -1,4 +1,3 @@
-
 pub enum Class {
     Mammal,
     Bird,
@@ -26,4 +25,3 @@ pub struct Animal {
     pub area: Vec<Continent>,
     pub diet : Diet,
 }
-

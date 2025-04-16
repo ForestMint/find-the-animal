@@ -2,7 +2,6 @@ use crate::game::pool_of_animals::animal::Class::*;
 use crate::game::pool_of_animals::animal::Continent::*;
 use crate::game::pool_of_animals::animal::Diet::*;
 
-
 mod animal;
 
 pub struct PoolOfAnimals {
@@ -10,8 +9,8 @@ pub struct PoolOfAnimals {
 }
 
 impl PoolOfAnimals {
-    pub fn fill() -> PoolOfAnimals {
 
+    pub fn fill() -> PoolOfAnimals {
 
         let lion = animal::Animal {
             name: "lion".to_string(),
@@ -128,5 +127,6 @@ impl PoolOfAnimals {
         let my_vector_of_animals = vec![lion, tiger];
 
         PoolOfAnimals { vector_of_animals: my_vector_of_animals }
+        
     }
 }

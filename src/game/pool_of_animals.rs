@@ -174,8 +174,8 @@ impl PoolOfAnimals {
             can_fly: false,
         };
 
-        let ostritch = animal::Animal {
-            name: "ostritch".to_string(),
+        let ostrich = animal::Animal {
+            name: "ostrich".to_string(),
             class: Bird,
             area: vec![Africa],
             diet: Omnivore,

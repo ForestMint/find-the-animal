@@ -8,6 +8,7 @@ pub enum Class {
 pub enum Continent {
     Africa,
     Americas,
+    Antarctica,
     Asia,
     Europe,
     Oceania

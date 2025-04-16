@@ -15,4 +15,8 @@ impl Game {
         self.is_over
     }
 
+    pub fn shoot_animal(self) {
+
+    }
+
 }

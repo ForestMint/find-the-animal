@@ -165,6 +165,15 @@ impl PoolOfAnimals {
             can_fly: false,
         };
 
+        let crocodile = animal::Animal {
+            name: "crocodile".to_string(),
+            class: Reptile,
+            area: vec![Africa, Americas],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+
         let my_vector_of_animals = vec![lion, tiger];
 
         PoolOfAnimals { vector_of_animals: my_vector_of_animals }

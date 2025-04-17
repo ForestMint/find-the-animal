@@ -13,8 +13,10 @@ impl Game {
     pub fn new() -> Game {
 
         let my_deck_of_animals = pool_of_animals::PoolOfAnimals::fill();
-        let my_board_of_animals = my_deck_of_animals.pick(12);
-        let my_hand_of_animals = my_deck_of_animals.pick(5);
+        let my_board_of_animals = pool_of_animals::PoolOfAnimals::pick(&my_deck_of_animals, 12);
+        let my_hand_of_animals = pool_of_animals::PoolOfAnimals::pick(&my_deck_of_animals, 5);
+
+        
 
 
         Game {

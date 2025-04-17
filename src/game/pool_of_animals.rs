@@ -10,6 +10,12 @@ pub struct PoolOfAnimals {
 
 impl PoolOfAnimals {
 
+    pub fn pick(&self, number_of_animals_to_pick : i32) -> PoolOfAnimals {
+        let new_vector_of_animals = vec![];
+        let new_pool_of_animals = PoolOfAnimals{vector_of_animals: new_vector_of_animals};
+        new_pool_of_animals
+    }
+
     pub fn fill() -> PoolOfAnimals {
 
         let lion = animal::Animal {

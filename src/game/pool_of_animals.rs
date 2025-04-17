@@ -20,9 +20,9 @@ impl PoolOfAnimals {
         let mut rng = rand::thread_rng();
         println!("Integer: {}", rng.gen_range(0..10));
 
-        let index = rng.gen_range(0..self.vector_of_animals.len());
+        let my_index = rng.gen_range(0..self.vector_of_animals.len());
 
-        let new_animal = self.vector_of_animals[index];
+        let new_animal = &self.vector_of_animals[my_index];
         new_animal
 
 

@@ -1,16 +1,16 @@
 mod pool_of_animals;
 
-pub struct Game {
-    deck: pool_of_animals::PoolOfAnimals,
-    board: pool_of_animals::PoolOfAnimals,
-    hand: pool_of_animals::PoolOfAnimals,
+pub struct Game<'a>{
+    deck: pool_of_animals::PoolOfAnimals<'a>,
+    board: pool_of_animals::PoolOfAnimals<'a>,
+    hand: pool_of_animals::PoolOfAnimals<'a>,
     name_of_secret_animal: String,
     is_over: bool,
 }
 
-impl Game {
+impl Game<'_> {
 
-    pub fn new() -> Game {
+    pub fn new() -> Game<'static> {
 
         let my_deck_of_animals = pool_of_animals::PoolOfAnimals::fill();
         let my_board_of_animals = pool_of_animals::PoolOfAnimals::pick(&my_deck_of_animals, &12);

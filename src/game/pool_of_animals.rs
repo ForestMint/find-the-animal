@@ -8,13 +8,13 @@ use rand::Rng;
 
 mod animal;
 
-pub struct PoolOfAnimals {
-    pub vector_of_animals : Vec<animal::Animal>,
+pub struct PoolOfAnimals<'a> {
+    pub vector_of_animals : Vec<&'a animal::Animal>,
 }
 
-impl PoolOfAnimals {
+impl PoolOfAnimals<'_> {
 
-    pub fn randomly_pick_one(self) -> animal::Animal {
+    pub fn randomly_pick_one(self) -> &'static animal::Animal {
 
 
         let mut rng = rand::thread_rng();
@@ -43,7 +43,7 @@ impl PoolOfAnimals {
         new_pool_of_animals
     }
 
-    pub fn fill() -> PoolOfAnimals {
+    pub fn fill() -> PoolOfAnimals<'static> {
 
         let lion = animal::Animal {
             name: "lion".to_string(),
@@ -235,7 +235,7 @@ impl PoolOfAnimals {
             can_fly: true,
         };
 
-        let my_vector_of_animals = vec![lion, tiger, cobra, chameleon, elephant, zebra, hippopotamus, rhinoceros, lama, colibri, panda, koala, komodo_dragon, seagull, penguin, walrus, iguana, crocodile, ostrich, greater_flamingo, toucan];
+        let my_vector_of_animals = vec![&lion, &tiger, &cobra, &chameleon, &elephant, &zebra, &hippopotamus, &rhinoceros, &lama, &colibri, &panda, &koala, &komodo_dragon, &seagull, &penguin, &walrus, &iguana, &crocodile, &ostrich, &greater_flamingo, &toucan];
 
         PoolOfAnimals { vector_of_animals: my_vector_of_animals }
 

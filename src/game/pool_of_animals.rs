@@ -1,6 +1,8 @@
 use crate::game::pool_of_animals::animal::Class::*;
 use crate::game::pool_of_animals::animal::Continent::*;
 use crate::game::pool_of_animals::animal::Diet::*;
+use rand::seq::SliceRandom; // 0.7.2
+//use rand::seq::IndexedRandom; // 0.9.0
 
 mod animal;
 
@@ -10,8 +12,32 @@ pub struct PoolOfAnimals {
 
 impl PoolOfAnimals {
 
+    pub fn randomly_pick_one(&self) -> animal::Animal {
+
+
+        match &self.vector_of_animals.choose(&mut rand::rng()) {
+            Some(i) => println!("{}", i),
+            None    => println!("Nothing!")
+        }
+
+
+        let new_animal = i;
+        new_animal
+
+
+
+    }
+
     pub fn pick(&self, number_of_animals_to_pick : i32) -> PoolOfAnimals {
         let new_vector_of_animals = vec![];
+
+        while (number_of_animals_to_pick!=0){
+
+            let new_animal = self.randomly_pick_one();
+            new_vector_of_animals.push(new_animal);
+            number_of_animals_to_pick-=1;
+        }
+
         let new_pool_of_animals = PoolOfAnimals{vector_of_animals: new_vector_of_animals};
         new_pool_of_animals
     }

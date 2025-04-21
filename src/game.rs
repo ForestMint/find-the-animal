@@ -6,11 +6,13 @@ use crate::game::animal::Class::*;
 use crate::game::animal::Continent::*;
 use crate::game::animal::Diet::*;
 
+use crate::game::animal::Animal;
+
 
 pub struct Game {
-    deck: pool_of_animals::PoolOfAnimals,
-    board: pool_of_animals::PoolOfAnimals,
-    hand: pool_of_animals::PoolOfAnimals,
+    deck: Vec<Animal>,
+    board: Vec<Animal>,
+    hand: Vec<Animal>,
     name_of_secret_animal: String,
     is_over: bool,
 }
@@ -211,12 +213,12 @@ impl Game {
             can_fly: true,
         };
 
-        let my_vector_of_animals = vec![lion, tiger, cobra, chameleon, elephant, zebra, hippopotamus, rhinoceros, lama, colibri, panda, koala, komodo_dragon, seagull, penguin, walrus, iguana, crocodile, ostrich, greater_flamingo, toucan];
+        let my_deck_of_animals = vec![lion, tiger, cobra, chameleon];
+        let my_board_of_animals = vec![elephant, zebra, hippopotamus, rhinoceros, lama, colibri, panda, koala, komodo_dragon, seagull, penguin, walrus];
+        let my_hand_of_animals = vec![iguana, crocodile, ostrich, greater_flamingo, toucan];
 
 
-        let my_deck_of_animals = pool_of_animals::PoolOfAnimals::fill();
-        let my_board_of_animals = pool_of_animals::PoolOfAnimals::pick(&my_deck_of_animals, 12);
-        let my_hand_of_animals = pool_of_animals::PoolOfAnimals::pick(&my_deck_of_animals, 5);
+
 
         
 
@@ -238,6 +240,7 @@ impl Game {
 
     }
 
+    /*
     pub fn is_secret_animal_shot(&self) -> bool {
         let mut secret_animal_found = false;
         for animal in &self.board.vector_of_animals {
@@ -247,6 +250,7 @@ impl Game {
         }
         !secret_animal_found
     }
+    */
 
 
 }

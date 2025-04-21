@@ -245,8 +245,17 @@ impl Game {
 
     }
 
-    pub fn shoot_animal(&self, animal : String) {
-
+    pub fn shoot_animal(&mut self, animal_name : String) {
+        //let animal_name = "walrus";
+        self.board.remove(0);
+        /*
+        for animal in &self.board {
+            if (animal.name == animal_name) {
+                let index = self.board.iter().position(|x| *x.name == animal_name).unwrap();
+                &mut self.board.remove(index);
+            }
+        }
+        */
     }
 
 

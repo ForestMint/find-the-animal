@@ -2,6 +2,11 @@ mod pool_of_animals;
 
 mod animal;
 
+use crate::game::animal::Class::*;
+use crate::game::animal::Continent::*;
+use crate::game::animal::Diet::*;
+
+
 pub struct Game {
     deck: pool_of_animals::PoolOfAnimals,
     board: pool_of_animals::PoolOfAnimals,
@@ -13,6 +18,201 @@ pub struct Game {
 impl Game {
 
     pub fn new() -> Game {
+
+
+
+        let lion = animal::Animal {
+            name: "lion".to_string(),
+            class: Mammal,
+            area: vec![Africa],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let tiger = animal::Animal {
+            name: "tiger".to_string(),
+            class: Mammal,
+            area: vec![Asia],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let cobra = animal::Animal {
+            name: "cobra".to_string(),
+            class: Reptile,
+            area: vec![Asia],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let chameleon = animal::Animal {
+            name: "chameleon".to_string(),
+            class: Reptile,
+            area: vec![Americas],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let elephant = animal::Animal {
+            name: "elephant".to_string(),
+            class: Mammal,
+            area: vec![Africa, Asia],
+            diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let zebra = animal::Animal {
+            name: "zebra".to_string(),
+            class: Mammal,
+            area: vec![Africa],
+            diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let hippopotamus = animal::Animal {
+            name: "hippopotamus".to_string(),
+            class: Mammal,
+            area: vec![Africa],
+            diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let rhinoceros = animal::Animal {
+            name: "rhinoceros".to_string(),
+            class: Mammal,
+            area: vec![Africa],
+            diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let lama = animal::Animal {
+            name: "lama".to_string(),
+            class: Mammal,
+            area: vec![Americas],
+            diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let colibri = animal::Animal {
+            name: "colibri".to_string(),
+            class: Bird,
+            area: vec![Americas],
+            diet: Omnivore,
+            has_wings: true,
+            can_fly: true,
+        };
+    
+        let panda = animal::Animal {
+            name: "panda".to_string(),
+            class: Mammal,
+            area: vec![Asia],
+            diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let koala = animal::Animal {
+            name: "koala".to_string(),
+            class: Mammal,
+            area: vec![Oceania],
+            diet: Herbivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let komodo_dragon = animal::Animal {
+            name: "komodo_dragon".to_string(),
+            class: Reptile,
+            area: vec![Asia],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+    
+        let seagull = animal::Animal {
+            name: "seagull".to_string(),
+            class: Bird,
+            area: vec![Africa, Asia, Americas, Europe, Oceania],
+            diet: Carnivore,
+            has_wings: true,
+            can_fly: true,
+        };
+    
+        let penguin = animal::Animal {
+            name: "penguin".to_string(),
+            class: Bird,
+            area: vec![Antarctica],
+            diet: Carnivore,
+            has_wings: true,
+            can_fly: false,
+        };
+    
+        let walrus = animal::Animal {
+            name: "walrus".to_string(),
+            class: Mammal,
+            area: vec![Antarctica],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+
+        let iguana = animal::Animal {
+            name: "iguana".to_string(),
+            class: Reptile,
+            area: vec![Americas],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+
+        let crocodile = animal::Animal {
+            name: "crocodile".to_string(),
+            class: Reptile,
+            area: vec![Africa, Americas],
+            diet: Carnivore,
+            has_wings: false,
+            can_fly: false,
+        };
+
+        let ostrich = animal::Animal {
+            name: "ostrich".to_string(),
+            class: Bird,
+            area: vec![Africa],
+            diet: Omnivore,
+            has_wings: true,
+            can_fly: false,
+        };
+
+        let greater_flamingo = animal::Animal {
+            name: "greater_flamingo".to_string(),
+            class: Bird,
+            area: vec![Africa, Asia, Europe],
+            diet: Carnivore,
+            has_wings: true,
+            can_fly: true,
+        };
+
+
+        let toucan = animal::Animal {
+            name: "toucan".to_string(),
+            class: Bird,
+            area: vec![Americas],
+            diet: Herbivore,
+            has_wings: true,
+            can_fly: true,
+        };
+
+        let my_vector_of_animals = vec![lion, tiger, cobra, chameleon, elephant, zebra, hippopotamus, rhinoceros, lama, colibri, panda, koala, komodo_dragon, seagull, penguin, walrus, iguana, crocodile, ostrich, greater_flamingo, toucan];
+
 
         let my_deck_of_animals = pool_of_animals::PoolOfAnimals::fill();
         let my_board_of_animals = pool_of_animals::PoolOfAnimals::pick(&my_deck_of_animals, 12);

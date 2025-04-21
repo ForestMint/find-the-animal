@@ -236,11 +236,13 @@ impl Game {
 
     pub fn is_over(&self) -> bool {
         if self.is_secret_animal_shot() {
+            println!("secret animal was shot");
             return true ;
         }
         else {
             
             if (&self.board).len()==1{
+                println!("only the secret animal left.");
                 return true ;
             }
         }
@@ -252,7 +254,7 @@ impl Game {
     pub fn shoot_animal(&mut self, animal_name : String) {
         let mut index = 0;
         for animal in &self.board {
-            if (animal.name == animal_name) {
+            if animal.name == animal_name {
                 break;
                 
             }else {
@@ -288,9 +290,12 @@ impl Game {
 
 
     pub fn is_secret_animal_shot(&self) -> bool {
-        let mut secret_animal_found = false;
         for animal in &self.board {
-            if (animal.name.trim() == self.name_of_secret_animal.trim()) {
+            println!("{}", animal.name);
+            println!("{}", self.name_of_secret_animal);
+
+            if animal.name.trim() == self.name_of_secret_animal.trim() {
+                println!("secret animal not shot yet");
                 return false;
             }
         }

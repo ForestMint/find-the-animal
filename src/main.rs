@@ -14,7 +14,7 @@ fn main () {
         
         let b1 = std::io::stdin().read_line(&mut shoot_candidate).unwrap();
 
-        //println!("{}", b1);
+        println!("{}", shoot_candidate);
 
         // shoot the animal chosen
         game::Game::shoot_animal(&mut my_game, shoot_candidate);

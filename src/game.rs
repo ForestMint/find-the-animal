@@ -1,4 +1,3 @@
-mod pool_of_animals;
 
 mod animal;
 
@@ -7,7 +6,6 @@ use crate::game::animal::Continent::*;
 use crate::game::animal::Diet::*;
 
 use crate::game::animal::Animal;
-
 
 pub struct Game {
     deck: Vec<Animal>,

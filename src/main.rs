@@ -16,8 +16,13 @@ fn main () {
 
         println!("{}", shoot_candidate);
 
-        // shoot the animal chosen
-        game::Game::shoot_animal(&mut my_game, shoot_candidate);
+        if game::Game::is_animal_on_board(&mut my_game, shoot_candidate.clone()) {
+
+            // shoot the animal chosen
+            game::Game::shoot_animal(&mut my_game, shoot_candidate);
+        }else{
+            println!("this animal is not on the board");
+        }
 
     }
 }

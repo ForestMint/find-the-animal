@@ -1,5 +1,7 @@
 mod pool_of_animals;
 
+mod animal;
+
 pub struct Game {
     deck: pool_of_animals::PoolOfAnimals,
     board: pool_of_animals::PoolOfAnimals,

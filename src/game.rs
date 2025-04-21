@@ -231,14 +231,25 @@ impl Game {
     }
 
     pub fn is_over(&self) -> bool {
-        self.is_over
+        if self.is_secret_animal_shot() {
+            return true ;
+        }
+        else {
+            
+            if (&self.board).len()==1{
+                return true ;
+            }
+        }
+        
+        return false;
+
     }
 
     pub fn shoot_animal(&self, animal : String) {
 
     }
 
-    
+
     pub fn is_secret_animal_shot(&self) -> bool {
         let mut secret_animal_found = false;
         for animal in &self.board {

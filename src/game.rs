@@ -255,6 +255,15 @@ impl Game {
         self.board.remove(index);
     }
 
+    pub fn is_animal_on_board(&mut self, animal_name : String) -> bool {
+        for animal in &self.board {
+            if (animal.name == animal_name) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     pub fn is_secret_animal_shot(&self) -> bool {
         let mut secret_animal_found = false;

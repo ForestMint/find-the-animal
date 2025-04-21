@@ -15,6 +15,10 @@ pub struct Game {
     is_over: bool,
 }
 
+pub fn print_type<T>(_: &T) { 
+    println!("{:?}", std::any::type_name::<T>());
+}
+
 impl Game {
 
     pub fn new() -> Game {
@@ -255,11 +259,25 @@ impl Game {
         self.board.remove(index);
     }
 
+
+
     pub fn is_animal_on_board(&mut self, animal_name : String) -> bool {
         for animal in &self.board {
-            if (animal.name == animal_name) {
+            
+            //print_type(&animal.name);
+            //print_type(&animal_name);
+            //println!("{}",animal.name);
+            //println!("{}",animal_name);
+            //println!("{}", animal.name == animal_name);
+            //println!("{}", "walrus" == "walrus");
+            
+            
+            //if 1== 1{
+
+            if animal.name.trim() == animal_name.trim() {
                 return true;
             }
+            
         }
         return false;
     }

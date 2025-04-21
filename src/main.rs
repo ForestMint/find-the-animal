@@ -3,6 +3,7 @@ use std::io::stdin;
 mod game;
 
 
+
 fn main () {
     let mut my_game = game::Game::new();
 
@@ -14,7 +15,7 @@ fn main () {
         
         let b1 = std::io::stdin().read_line(&mut shoot_candidate).unwrap();
 
-        println!("{}", shoot_candidate);
+        //println!("{}", shoot_candidate);
 
         if game::Game::is_animal_on_board(&mut my_game, shoot_candidate.clone()) {
 

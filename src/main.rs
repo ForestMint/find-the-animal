@@ -11,8 +11,10 @@ fn main () {
 
         // ask the player for an animal
         let mut shoot_candidate = String::new();
-        println!("Animal to eliminate : ");
+        
         let b1 = std::io::stdin().read_line(&mut shoot_candidate).unwrap();
+
+        println!("{}", b1);
 
         // shoot the animal chosen
         game::Game::shoot_animal(&mut my_game, shoot_candidate);

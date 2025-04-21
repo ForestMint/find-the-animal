@@ -253,10 +253,14 @@ impl Game {
         let mut index = 0;
         for animal in &self.board {
             if (animal.name == animal_name) {
+                break;
+                
+            }else {
                 index +=1;
             }
         }
-        self.board.remove(index);
+
+        self.board.remove(index-1);
     }
 
 
@@ -286,11 +290,11 @@ impl Game {
     pub fn is_secret_animal_shot(&self) -> bool {
         let mut secret_animal_found = false;
         for animal in &self.board {
-            if (animal.name == self.name_of_secret_animal) {
-                secret_animal_found = true
+            if (animal.name.trim() == self.name_of_secret_animal.trim()) {
+                return false;
             }
         }
-        !secret_animal_found
+        return true;
     }
     
 

@@ -297,7 +297,7 @@ impl Game {
 
     pub fn is_reached_target_number_of_eliminated_animals(&self) -> bool {
         let targets = vec![1,2,6,9,11];
-        println!("{}",&self.board.len());
+        //println!("{}",&self.board.len());
         targets.contains(&self.board.len())
     }
 

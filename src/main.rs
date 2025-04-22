@@ -10,6 +10,10 @@ fn main () {
     // as long as the game is not over
     while !&my_game.is_over() {
 
+
+        println!("choose an animal to eliminate : ");
+
+
         // ask the player for an animal
         let mut shoot_candidate = String::new();
         

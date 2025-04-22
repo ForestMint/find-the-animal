@@ -254,15 +254,16 @@ impl Game {
     pub fn shoot_animal(&mut self, animal_name : String) {
         let mut index = 0;
         for animal in &self.board {
-            if animal.name == animal_name {
+            if animal.name.trim() == animal_name.trim() {
                 break;
                 
             }else {
                 index +=1;
             }
         }
-
-        self.board.remove(index-1);
+        //println!("animal being shot : ");
+        //println!("{}",&self.board[index].name);
+        self.board.remove(index);
     }
 
 
@@ -291,14 +292,15 @@ impl Game {
 
     pub fn is_secret_animal_shot(&self) -> bool {
         for animal in &self.board {
-            println!("{}", animal.name);
-            println!("{}", self.name_of_secret_animal);
+            //println!("{}", animal.name);
+            //println!("{}", self.name_of_secret_animal);
 
             if animal.name.trim() == self.name_of_secret_animal.trim() {
-                println!("secret animal not shot yet");
+                //println!("secret animal not shot yet");
                 return false;
             }
         }
+            //println!("secret animal shot yet");
         return true;
     }
     

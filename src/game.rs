@@ -9,7 +9,7 @@ use crate::game::animal::Animal;
 
 pub struct Game {
     deck: Vec<Animal>,
-    board: Vec<Animal>,
+    pub board: Vec<Animal>,
     hand: Vec<Animal>,
     name_of_secret_animal: String,
     is_over: bool,

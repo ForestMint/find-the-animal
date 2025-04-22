@@ -10,7 +10,11 @@ fn main () {
     // as long as the game is not over
     while !&my_game.is_over() {
 
-
+        println!("current content of the board ");
+        for el in &my_game.board {
+            print!("{} ", el.name);
+        }
+        println!("");
         println!("choose an animal to eliminate : ");
 
 

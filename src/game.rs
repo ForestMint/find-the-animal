@@ -7,6 +7,9 @@ use crate::game::animal::Diet::*;
 
 use crate::game::animal::Animal;
 
+use rand::thread_rng;
+use rand::seq::SliceRandom;
+
 pub struct Game {
     deck: Vec<Animal>,
     pub board: Vec<Animal>,
@@ -215,10 +218,30 @@ impl Game {
             can_fly: true,
         };
 
+        let mut my_pool = vec![lion,tiger,cobra,chameleon,elephant, zebra, hippopotamus, rhinoceros, lama, colibri, panda, koala, komodo_dragon, seagull, penguin, walrus, iguana, crocodile, ostrich, greater_flamingo, toucan];
+        my_pool.shuffle(&mut thread_rng());
+
+        // Get a slice from index 0 to 4 (excluding index 5)
+        let my_hand_of_animals = my_pool[0..5].to_vec();
+
+        // Get a slice from index 5 to 16 (excluding index 17)
+        let my_board_of_animals = my_pool[5..17].to_vec();
+
+        // Get a slice from index 17 to 20 (excluding index 21)
+        let my_deck_of_animals = my_pool[17..21].to_vec();
+
+
+        /*
+        let my_hand_of_animals = vec![my_pool[0].clone(), my_pool[1].clone(), &my_pool[2].clone(), &my_pool[3].clone(),&my_pool[4].clone()];
+        let my_board_of_animals = vec![my_pool[5], my_pool[6], my_pool[7],my_pool[8], my_pool[9], my_pool[10], my_pool[11],my_pool[12], my_pool[13], my_pool[14], my_pool[15], my_pool[16]];
+        let my_deck_of_animals = vec![my_pool[17], my_pool[18], my_pool[19],my_pool[20], my_pool[21]];
+        */
+
+        /*
         let my_deck_of_animals = vec![lion, tiger, cobra, chameleon];
         let my_board_of_animals = vec![elephant, zebra, hippopotamus, rhinoceros, lama, colibri, panda, koala, komodo_dragon, seagull, penguin, walrus];
         let my_hand_of_animals = vec![iguana, crocodile, ostrich, greater_flamingo, toucan];
-
+        */
 
 
 
@@ -227,9 +250,10 @@ impl Game {
 
         Game {
             deck: my_deck_of_animals, 
-            board: my_board_of_animals,
+            board: my_board_of_animals.clone(),
             hand: my_hand_of_animals,
-            name_of_secret_animal: "walrus".to_string(),
+            name_of_secret_animal: my_board_of_animals[0].name.to_string(),
+            //name_of_secret_animal: "walrus".to_string(),
             is_over: false
         }
     }

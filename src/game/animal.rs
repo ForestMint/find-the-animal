@@ -1,9 +1,11 @@
+#[derive(Clone)]
 pub enum Class {
     Mammal,
     Bird,
     Reptile
 }
 
+#[derive(Clone)]
 pub enum Continent {
     Africa,
     Americas,
@@ -13,12 +15,14 @@ pub enum Continent {
     Oceania
 }
 
+#[derive(Clone)]
 pub enum Diet {
     Carnivore,
     Herbivore,
     Omnivore
 }
 
+#[derive(Clone)]
 pub struct Animal {
     pub name: String,
     pub class: Class,

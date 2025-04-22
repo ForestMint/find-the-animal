@@ -10,6 +10,7 @@ use crate::game::animal::Animal;
 use rand::thread_rng;
 use rand::seq::SliceRandom;
 
+#[derive(Clone)]
 pub struct Game {
     deck: Vec<Animal>,
     pub board: Vec<Animal>,
@@ -294,6 +295,15 @@ impl Game {
         self.board.remove(index);
     }
 
+    pub fn is_reached_target_number_of_eliminated_animals(&self) -> bool {
+        let targets = vec![1,2,6,9,11];
+        println!("{}",&self.board.len());
+        targets.contains(&self.board.len())
+    }
+
+    pub fn request_hint(self) -> String {
+        ">>>iguana<<<".to_string()
+    }
 
 
     pub fn is_animal_on_board(&mut self, animal_name : String) -> bool {

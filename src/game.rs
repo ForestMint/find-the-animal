@@ -225,7 +225,11 @@ impl Game {
         let my_hand_of_animals = my_pool[0..5].to_vec();
 
         // Get a slice from index 5 to 16 (excluding index 17)
-        let my_board_of_animals = my_pool[5..17].to_vec();
+        let mut my_board_of_animals = my_pool[5..17].to_vec();
+
+        let name_of_my_secret_animal = my_board_of_animals[0].name.to_string();
+        my_board_of_animals.shuffle(&mut thread_rng());
+
 
         // Get a slice from index 17 to 20 (excluding index 21)
         let my_deck_of_animals = my_pool[17..21].to_vec();
@@ -252,7 +256,7 @@ impl Game {
             deck: my_deck_of_animals, 
             board: my_board_of_animals.clone(),
             hand: my_hand_of_animals,
-            name_of_secret_animal: my_board_of_animals[0].name.to_string(),
+            name_of_secret_animal: name_of_my_secret_animal,
             //name_of_secret_animal: "walrus".to_string(),
             is_over: false
         }

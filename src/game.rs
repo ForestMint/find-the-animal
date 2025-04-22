@@ -10,6 +10,8 @@ use crate::game::animal::Animal;
 use rand::thread_rng;
 use rand::seq::SliceRandom;
 
+use rand::Rng;
+
 #[derive(Clone)]
 pub struct Game {
     deck: Vec<Animal>,
@@ -302,7 +304,16 @@ impl Game {
     }
 
     pub fn request_hint(self) -> String {
-        ">>>iguana<<<".to_string()
+        let mut rng = rand::thread_rng();
+        let res = rng.gen_range(0..2);
+        let mut mem = "";
+        if res == 0 {
+            mem = "(+)";
+        }else {
+            mem = "(-)";
+        }
+        //"iguana".to_string()
+        mem.to_owned()+"iguana"
     }
 
 

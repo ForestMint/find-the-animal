@@ -306,7 +306,13 @@ impl Game {
         
     }
 
+    pub fn pop_target(&mut self) {
+        //self.unreached_targets.pop(&self.board.len());
 
+        if let Some(index) = self.unreached_targets.iter().position(|value| *value == self.board.len()) {
+            self.unreached_targets.swap_remove(index);
+        }
+    }
 
     pub fn request_hint(self) -> String {
         let mut rng = rand::thread_rng();

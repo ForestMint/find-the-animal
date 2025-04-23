@@ -48,7 +48,10 @@ fn main () {
             
             //std::process::exit(0)
         }
-        println!("{}",my_game.clone().request_hint());
+        if my_game.is_reached_target_number_of_eliminated_animals(){
+            println!("{}",my_game.clone().request_hint());
+            my_game.pop_target()
+        }
 
         println!("current content of the board ");
         for el in &my_game.board {

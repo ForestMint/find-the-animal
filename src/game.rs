@@ -26,6 +26,36 @@ pub fn print_type<T>(_: &T) {
     println!("{:?}", std::any::type_name::<T>());
 }
 
+pub fn get_similarity_score (animal_1: Animal, animal_2: Animal) -> i32 {
+    let mut similarity_score: i32 = 0;
+
+    if animal_1.class == animal_2.class {
+        similarity_score += 50;
+    }
+
+    if animal_1.has_wings && animal_2.has_wings {
+        similarity_score += 25;
+    }
+
+    if animal_1.can_fly && animal_2.can_fly {
+        similarity_score += 25;
+    }
+
+    /*
+    if animal_1.diet == animal_2.diet {
+        similarity_score += 20;
+    }
+
+    if animal_1.area == animal_2.area {
+        similarity_score += 15;
+    }
+    */
+
+
+
+    similarity_score
+}
+
 impl Game {
 
     pub fn new() -> Game {

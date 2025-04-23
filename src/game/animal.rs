@@ -1,11 +1,11 @@
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 pub enum Class {
     Mammal,
     Bird,
     Reptile
 }
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 pub enum Continent {
     Africa,
     Americas,
@@ -15,7 +15,7 @@ pub enum Continent {
     Oceania
 }
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 pub enum Diet {
     Carnivore,
     Herbivore,

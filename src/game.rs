@@ -19,6 +19,7 @@ pub struct Game {
     hand: Vec<Animal>,
     name_of_secret_animal: String,
     is_over: bool,
+    unreached_targets: Vec<usize>,
 }
 
 pub fn print_type<T>(_: &T) { 
@@ -260,6 +261,7 @@ impl Game {
             board: my_board_of_animals.clone(),
             hand: my_hand_of_animals,
             name_of_secret_animal: name_of_my_secret_animal,
+            unreached_targets: vec![1,2,6,9,11],
             //name_of_secret_animal: "walrus".to_string(),
             is_over: false
         }
@@ -298,10 +300,13 @@ impl Game {
     }
 
     pub fn is_reached_target_number_of_eliminated_animals(&self) -> bool {
-        let targets = vec![1,2,6,9,11];
+        //et unreached_targets = vec![1,2,6,9,11];
         //println!("{}",&self.board.len());
-        targets.contains(&self.board.len())
+        self.unreached_targets.contains(&self.board.len())
+        
     }
+
+
 
     pub fn request_hint(self) -> String {
         let mut rng = rand::thread_rng();

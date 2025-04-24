@@ -345,6 +345,7 @@ impl Game {
     }
 
     pub fn request_hint(self) -> String {
+        /*
         let mut rng = rand::thread_rng();
         let res = rng.gen_range(0..2);
         let mut mem = "";
@@ -353,8 +354,30 @@ impl Game {
         }else {
             mem = "(-)";
         }
-        //"iguana".to_string()
         mem.to_owned()+"iguana"
+        */
+
+        //let secret_animal: Animal;
+        let mut secret_animal = &self.board[0].clone();
+        for animal in &self.board {
+            if animal.name == self.name_of_secret_animal{
+                //secret_animal = animal.clone();
+                secret_animal = animal;
+            }
+        }
+        let mut similarity_between_hand_animals_and_secret_animal: Vec<i32> = Vec::new();
+        //let mut similarity_between_pool_animals_and_secret_animal: Vec<i32> = Vec::new();
+
+        for animal in &self.hand {
+            similarity_between_hand_animals_and_secret_animal.push(get_similarity_score(animal.clone(),secret_animal.clone()))
+        }
+
+        /*
+        for animal in &self.my_pool {
+            similarity_between_hand_animals_and_secret_animal.push(get_similarity_score(animal.clone(),secret_animal.clone()))
+        }
+        */
+        "".to_string()
     }
 
 

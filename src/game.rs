@@ -22,6 +22,18 @@ pub struct Game {
     unreached_targets: Vec<usize>,
 }
 
+pub fn average(numbers: Vec<i32>) -> i32 {
+    // Remember how many numbers we were passed.
+    let nnumbers = numbers.len() as i32;
+    let mut sum = 0;
+    // This will consume the numbers.
+    for n in numbers {
+        sum += n;
+    }
+    // Average (arithmetic mean) is sum divided by count.
+    sum / nnumbers
+}
+
 pub fn print_type<T>(_: &T) { 
     println!("{:?}", std::any::type_name::<T>());
 }
@@ -297,6 +309,8 @@ impl Game {
         }
     }
 
+
+
     pub fn is_over(&self) -> bool {
         if self.is_secret_animal_shot() {
             println!("secret animal was shot");
@@ -366,17 +380,25 @@ impl Game {
             }
         }
         let mut similarity_between_hand_animals_and_secret_animal: Vec<i32> = Vec::new();
-        //let mut similarity_between_pool_animals_and_secret_animal: Vec<i32> = Vec::new();
+        let mut similarity_between_deck_animals_and_secret_animal: Vec<i32> = Vec::new();
 
         for animal in &self.hand {
             similarity_between_hand_animals_and_secret_animal.push(get_similarity_score(animal.clone(),secret_animal.clone()))
         }
 
-        /*
-        for animal in &self.my_pool {
-            similarity_between_hand_animals_and_secret_animal.push(get_similarity_score(animal.clone(),secret_animal.clone()))
+        
+        for animal in &self.deck {
+            similarity_between_deck_animals_and_secret_animal.push(get_similarity_score(animal.clone(),secret_animal.clone()))
         }
-        */
+
+        let average_hand = average(similarity_between_hand_animals_and_secret_animal.clone());
+        let average_deck = average(similarity_between_deck_animals_and_secret_animal.clone());
+
+
+        println!("{:?}",similarity_between_hand_animals_and_secret_animal);
+
+        println!("{:?}",similarity_between_deck_animals_and_secret_animal);
+        
         "".to_string()
     }
 

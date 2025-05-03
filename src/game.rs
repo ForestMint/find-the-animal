@@ -400,17 +400,17 @@ impl Game {
 
 
         for value in &similarity_between_hand_animals_and_secret_animal {
-            abs_avg_diff_1.push(value-average_hand)
+            abs_avg_diff_1.push((value-average_hand).abs())
         }
 
         for value in &similarity_between_deck_animals_and_secret_animal {
-            abs_avg_diff_2.push(value-average_deck)
+            abs_avg_diff_2.push((value-average_deck).abs())
         }
 
 
-        println!("{:?}",similarity_between_hand_animals_and_secret_animal);
+        println!("{:?}",abs_avg_diff_1);
 
-        println!("{:?}",similarity_between_deck_animals_and_secret_animal);
+        println!("{:?}",abs_avg_diff_2);
         
         "".to_string()
     }

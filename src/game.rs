@@ -381,6 +381,10 @@ impl Game {
         }
         let mut similarity_between_hand_animals_and_secret_animal: Vec<i32> = Vec::new();
         let mut similarity_between_deck_animals_and_secret_animal: Vec<i32> = Vec::new();
+        let mut abs_avg_diff_1: Vec<i32> = Vec::new();
+        let mut abs_avg_diff_2: Vec<i32> = Vec::new();
+
+
 
         for animal in &self.hand {
             similarity_between_hand_animals_and_secret_animal.push(get_similarity_score(animal.clone(),secret_animal.clone()))
@@ -393,6 +397,15 @@ impl Game {
 
         let average_hand = average(similarity_between_hand_animals_and_secret_animal.clone());
         let average_deck = average(similarity_between_deck_animals_and_secret_animal.clone());
+
+
+        for value in &similarity_between_hand_animals_and_secret_animal {
+            abs_avg_diff_1.push(value-average_hand)
+        }
+
+        for value in &similarity_between_deck_animals_and_secret_animal {
+            abs_avg_diff_2.push(value-average_deck)
+        }
 
 
         println!("{:?}",similarity_between_hand_animals_and_secret_animal);

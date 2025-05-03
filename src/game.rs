@@ -22,6 +22,14 @@ pub struct Game {
     unreached_targets: Vec<usize>,
 }
 
+fn find_max(numbers: Vec<i32>) -> Option<i32> {
+    if numbers.is_empty() {
+        None
+    } else {
+        Some(*numbers.iter().max().unwrap())
+    }
+}
+
 pub fn average(numbers: Vec<i32>) -> i32 {
     // Remember how many numbers we were passed.
     let nnumbers = numbers.len() as i32;
@@ -406,6 +414,8 @@ impl Game {
         for value in &similarity_between_deck_animals_and_secret_animal {
             abs_avg_diff_2.push((value-average_deck).abs())
         }
+
+        let max_abs_avg_diff_1 = find_max(abs_avg_diff_1.clone());
 
 
         println!("{:?}",abs_avg_diff_1);

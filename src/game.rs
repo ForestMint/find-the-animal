@@ -452,7 +452,7 @@ impl Game {
 
     pub fn discard_from_hand(my_game: &mut Game, animal_name: String){
         for animal in my_game.hand.clone() {
-            if animal.name == animal_name {
+            if animal.name.to_string() == animal_name.to_string() {
                 my_game.shoot_animal_from_hand(animal_name.clone());
             }
         }

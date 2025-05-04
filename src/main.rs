@@ -6,8 +6,12 @@ mod game;
 
 fn main () {
     let mut my_game = game::Game::new();
+    let mut hint_animal = "";
 
-    println!("{}",my_game.clone().request_hint());
+    let binding = &my_game.clone().request_hint();
+    hint_animal = &binding;
+    my_game.clone().discard_from_hand(hint_animal.to_string());
+    println!("{}",hint_animal);
 
     while true {
 

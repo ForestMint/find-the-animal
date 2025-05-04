@@ -351,6 +351,21 @@ impl Game {
         self.board.remove(index);
     }
 
+    pub fn shoot_animal_from_hand(&mut self, animal_name : String) {
+        let mut index = 0;
+        for animal in &self.hand {
+            if animal.name.trim() == animal_name.trim() {
+                break;
+                
+            }else {
+                index +=1;
+            }
+        }
+        //println!("animal being shot : ");
+        //println!("{}",&self.board[index].name);
+        self.hand.remove(index);
+    }
+
     pub fn is_reached_target_number_of_eliminated_animals(&self) -> bool {
         //et unreached_targets = vec![1,2,6,9,11];
         //println!("{}",&self.board.len());
@@ -435,6 +450,14 @@ impl Game {
         result.to_string()
     }
 
+    pub fn discard_from_hand(mut self, animal_name: String) {
+        for animal in &self.hand.clone() {
+            if animal.name == animal_name {
+                &self.shoot_animal_from_hand(animal_name.clone());
+            }
+        }
+
+    }
 
     pub fn is_animal_on_board(&mut self, animal_name : String) -> bool {
         for animal in &self.board {

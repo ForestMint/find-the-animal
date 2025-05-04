@@ -53,7 +53,11 @@ fn main () {
             //std::process::exit(0)
         }
         if my_game.is_reached_target_number_of_eliminated_animals(){
-            println!("{}",my_game.clone().request_hint());
+            let binding = &my_game.clone().request_hint();
+            hint_animal = &binding;
+            my_game.clone().discard_from_hand(hint_animal.to_string());
+            println!("{}",hint_animal);
+            //println!("{}",my_game.clone().request_hint());
             my_game.pop_target()
         }
 

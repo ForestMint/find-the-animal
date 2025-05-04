@@ -380,6 +380,7 @@ impl Game {
         */
 
         //let secret_animal: Animal;
+        let mut result = "";
         let mut secret_animal = &self.board[0].clone();
         for animal in &self.board {
             if animal.name == self.name_of_secret_animal{
@@ -416,7 +417,12 @@ impl Game {
         }
 
         let max_abs_avg_diff_1 = find_max(abs_avg_diff_1.clone());
-
+        for n in 1..abs_avg_diff_1.len() {
+            if abs_avg_diff_1[n] == max_abs_avg_diff_1.expect("REASON") {
+                // we found the animal in hand to give as hint
+                result = &self.hand[n].name.to_string();
+            }
+        }
 
         println!("{:?}",abs_avg_diff_1);
 

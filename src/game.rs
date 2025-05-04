@@ -450,13 +450,12 @@ impl Game {
         result.to_string()
     }
 
-    pub fn discard_from_hand(mut self, animal_name: String) -> Game{
-        for animal in &self.hand.clone() {
+    pub fn discard_from_hand(my_game: &mut Game, animal_name: String){
+        for animal in my_game.hand.clone() {
             if animal.name == animal_name {
-                &self.shoot_animal_from_hand(animal_name.clone());
+                my_game.shoot_animal_from_hand(animal_name.clone());
             }
         }
-        self
     }
 
     pub fn is_animal_on_board(&mut self, animal_name : String) -> bool {

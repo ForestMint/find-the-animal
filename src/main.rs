@@ -10,7 +10,7 @@ fn main () {
 
     let binding = &my_game.clone().request_hint();
     hint_animal = &binding;
-    my_game = my_game.clone().discard_from_hand(hint_animal.to_string());
+    game::Game::discard_from_hand(&mut my_game, hint_animal.to_string());
     println!("{}",hint_animal);
 
     while true {
@@ -57,7 +57,7 @@ fn main () {
         if my_game.clone().is_reached_target_number_of_eliminated_animals(){
             let binding = &my_game.clone().request_hint();
             hint_animal = &binding;
-            my_game = my_game.clone().discard_from_hand(hint_animal.to_string());
+            game::Game::discard_from_hand(&mut my_game, hint_animal.to_string());
             println!("{}",hint_animal);
             //println!("{}",my_game.clone().request_hint());
             my_game.pop_target()

@@ -23,11 +23,11 @@ fn main () {
 
 
             println!("current content of the board ");
-            /*
+            
             for el in &my_game.board {
                 print!("{} ", el.name);
             }
-            */
+            
             println!("");
             println!("choose an animal to eliminate : ");
 
@@ -64,11 +64,11 @@ fn main () {
         }
 
         println!("current content of the board ");
-        /*
+        
         for el in &my_game.board {
             print!("{} ", el.name);
         }
-        */
+        
         println!("");
         println!("choose an animal to eliminate : ");
 

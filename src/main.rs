@@ -10,12 +10,12 @@ fn main () {
 
     let binding = &my_game.clone().request_hint();
     hint_animal = &binding;
-    my_game.clone().discard_from_hand(hint_animal.to_string());
+    my_game = my_game.clone().discard_from_hand(hint_animal.to_string());
     println!("{}",hint_animal);
 
     while true {
 
-        while !my_game.is_reached_target_number_of_eliminated_animals() {
+        while !&my_game.clone().is_reached_target_number_of_eliminated_animals() {
 
 
 
@@ -23,9 +23,11 @@ fn main () {
 
 
             println!("current content of the board ");
+            /*
             for el in &my_game.board {
                 print!("{} ", el.name);
             }
+            */
             println!("");
             println!("choose an animal to eliminate : ");
 
@@ -52,19 +54,21 @@ fn main () {
             
             //std::process::exit(0)
         }
-        if my_game.is_reached_target_number_of_eliminated_animals(){
+        if my_game.clone().is_reached_target_number_of_eliminated_animals(){
             let binding = &my_game.clone().request_hint();
             hint_animal = &binding;
-            my_game.clone().discard_from_hand(hint_animal.to_string());
+            my_game = my_game.clone().discard_from_hand(hint_animal.to_string());
             println!("{}",hint_animal);
             //println!("{}",my_game.clone().request_hint());
             my_game.pop_target()
         }
 
         println!("current content of the board ");
+        /*
         for el in &my_game.board {
             print!("{} ", el.name);
         }
+        */
         println!("");
         println!("choose an animal to eliminate : ");
 
